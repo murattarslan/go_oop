@@ -1,9 +1,10 @@
 package objects
 
 type Desk struct {
-	id     int
-	name   string
-	active bool
+	id       int
+	name     string
+	active   bool
+	callback func(bool)
 }
 
 func (this *Desk) GetName() string {
@@ -27,7 +28,16 @@ func (this *Desk) GetActive() bool {
 }
 
 func (this *Desk) SetActive(active bool) {
+	this.callback(active)
 	this.active = active
+}
+
+func (this *Desk) GetCallback() func(bool) {
+	return this.callback
+}
+
+func (this *Desk) SetCallback(callback func(bool)) {
+	this.callback = callback
 }
 
 func (this *Desk) Open(OnFail func(), OnSuccess func()) {
