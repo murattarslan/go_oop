@@ -35,7 +35,7 @@ func (this *Desk) SetName(name string) {
 }
 
 ```
-Burada dikkat etmemiz gereken durumlardan ilki fonksiyon nesnenin değil :bangbang: nesne adres göstergecinin eklentisi olmalı.
+Burada dikkat etmemiz gereken durumlardan ilki fonksiyon nesnenin değil :bangbang: nesne adres göstergecinin eklentisi olmalı. Çünkü eğer nesnenin eklentisi olursa geri dönüş değeri vermeli ve çağrılan yerde bunu karşılamalıyız. Ama nesnenin adresinde işlem yaparsak fonksiyon bitiminde bizim tekrar o nesneyi düzenlememize gerek kalmaz
 
 :warning: Getter/Setter fonksiyonlar paket dışından erişilebilir olmalı. Bu yüzden fonksiyon isimleri *Büyük Harf* ile başlamalı :wink:
 
